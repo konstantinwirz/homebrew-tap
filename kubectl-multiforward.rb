@@ -5,11 +5,11 @@
 class KubectlMultiforward < Formula
   desc ""
   homepage "https://github.com/konstantinwirz"
-  version "0.7.0"
+  version "0.8.0"
 
   on_macos do
-    url "https://github.com/konstantinwirz/kubectl-multiforward/releases/download/v0.7.0/kubectl-multiforward_Darwin_all.tar.gz"
-    sha256 "8c0f1334468883c9109071c852362f7f5ec22fcebd46c2a62b095fd571975511"
+    url "https://github.com/konstantinwirz/kubectl-multiforward/releases/download/v0.8.0/kubectl-multiforward_Darwin_all.tar.gz"
+    sha256 "554f4b8e770e021685f604b9e4ac1e0e8e8e6b4b6a697aa740673172d9b85f21"
 
     def install
       bin.install "kubectl-multiforward"
@@ -19,8 +19,8 @@ class KubectlMultiforward < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/konstantinwirz/kubectl-multiforward/releases/download/v0.7.0/kubectl-multiforward_Linux_x86_64.tar.gz"
-        sha256 "06c76519ad6ffba3d3ac23630a4ef572b69411de2a90844e038162bce1804d35"
+        url "https://github.com/konstantinwirz/kubectl-multiforward/releases/download/v0.8.0/kubectl-multiforward_Linux_x86_64.tar.gz"
+        sha256 "06098385ecaca06138550fd1660b1e223e58e7e047fd38ff65470bbdd1a6dba1"
 
         def install
           bin.install "kubectl-multiforward"
@@ -29,8 +29,8 @@ class KubectlMultiforward < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/konstantinwirz/kubectl-multiforward/releases/download/v0.7.0/kubectl-multiforward_Linux_arm64.tar.gz"
-        sha256 "83bafd902ced2cd91ae11ba13d6655c003fb04e9f390600f157e494048049b4e"
+        url "https://github.com/konstantinwirz/kubectl-multiforward/releases/download/v0.8.0/kubectl-multiforward_Linux_arm64.tar.gz"
+        sha256 "cd9db01c6f8390b03debebff3a925bf56846f22b05de327e1ea1b87640a1a2d6"
 
         def install
           bin.install "kubectl-multiforward"
