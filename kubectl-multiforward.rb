@@ -5,11 +5,11 @@
 class KubectlMultiforward < Formula
   desc ""
   homepage "https://github.com/konstantinwirz"
-  version "0.9.0"
+  version "0.11.0"
 
   on_macos do
-    url "https://github.com/konstantinwirz/kubectl-multiforward/releases/download/v0.9.0/kubectl-multiforward_Darwin_all.tar.gz"
-    sha256 "e75f2ebcddf3d6a7e3fe8dcbbeb0c21c37f585dd3c7c8e132b736cee97e75fed"
+    url "https://github.com/konstantinwirz/kubectl-multiforward/releases/download/v0.11.0/kubectl-multiforward_Darwin_all.tar.gz"
+    sha256 "796b5774752fb3a871fb18fbba5088ed83fa0e16d244b93da5eb069097ea39b3"
 
     def install
       bin.install "kubectl-multiforward"
@@ -17,24 +17,18 @@ class KubectlMultiforward < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/konstantinwirz/kubectl-multiforward/releases/download/v0.9.0/kubectl-multiforward_Linux_x86_64.tar.gz"
-        sha256 "601a5a96d7dad955b3ff385ddf8dc4b816350cd9bb1011dfa30b43373c8a673b"
-
-        def install
-          bin.install "kubectl-multiforward"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/konstantinwirz/kubectl-multiforward/releases/download/v0.11.0/kubectl-multiforward_Linux_x86_64.tar.gz"
+      sha256 "cfe9ea7ca6c1d0056b108de43fdc4672a2d3c79f5c8980f9d54efb3d91adef5b"
+      def install
+        bin.install "kubectl-multiforward"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/konstantinwirz/kubectl-multiforward/releases/download/v0.9.0/kubectl-multiforward_Linux_arm64.tar.gz"
-        sha256 "9d9f307e3ccb42f3398045b3b4864867891cbb5b76ffab59c49854f73b8798f5"
-
-        def install
-          bin.install "kubectl-multiforward"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/konstantinwirz/kubectl-multiforward/releases/download/v0.11.0/kubectl-multiforward_Linux_arm64.tar.gz"
+      sha256 "f578bf690c871de76fcc69f05f36e433da8b3cb197d89ccbdd70dbc113d7fdc3"
+      def install
+        bin.install "kubectl-multiforward"
       end
     end
   end
